@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：项目首页，展示项目与个人信息，并提供全部页面的导航入口
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校园二手交易平台 | 苏鹏</title>
+  <link rel="stylesheet" href="css/sp_index.css">
+</head>
+<body class="sp_body">
+  <canvas id="sp_canvas" class="sp_canvas"></canvas>
+  <div class="sp_orb sp_orb_a"></div>
+  <div class="sp_orb sp_orb_b"></div>
+
+  <div class="sp_page">
+    <header class="sp_shell sp_hero">
+      <span class="sp_tag">自选项目</span>
+      <h1 class="sp_title">校园二手交易平台</h1>
+      <p class="sp_subtitle">让闲置物品在校园里重新流动 · 前端页面导航</p>
+
+      <div class="sp_meta">
+        <div class="sp_meta_item">
+          <span class="sp_meta_label">姓名</span>
+          <span class="sp_meta_value">苏鹏</span>
+        </div>
+        <div class="sp_meta_item">
+          <span class="sp_meta_label">学号</span>
+          <span class="sp_meta_value">24002120412</span>
+        </div>
+        <div class="sp_meta_item">
+          <span class="sp_meta_label">项目类别</span>
+          <span class="sp_meta_value">自选</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="sp_shell sp_main">
+      <div class="sp_section_head">
+        <h2 class="sp_section_title">页面导航</h2>
+        <span class="sp_section_hint" id="sp_pageCount">加载中…</span>
+      </div>
+      <nav class="sp_nav_grid" id="sp_navGrid" aria-label="页面导航"></nav>
+    </main>
+
+    <footer class="sp_shell sp_foot">
+      <span>© 2026 苏鹏 · 24002120412</span>
+      <span>原生 HTML / CSS / JavaScript</span>
+    </footer>
+  </div>
+
+  <script src="js/sp_background.js"></script>
+  <script src="js/sp_index.js"></script>
+</body>
+</html>
