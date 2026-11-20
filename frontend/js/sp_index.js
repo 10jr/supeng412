@@ -9,8 +9,32 @@
     {
       sp_name: '首页',
       sp_path: 'index.html',
-      sp_desc: '项目入口，展示项目信息与全部页面导航',
+      sp_desc: '项目信息与全部页面导航入口',
       sp_tag: '当前页面'
+    },
+    {
+      sp_name: '商品列表',
+      sp_path: 'goods_list.html',
+      sp_desc: '浏览在售商品，支持关键词搜索、分类筛选与分页',
+      sp_tag: ''
+    },
+    {
+      sp_name: '发布商品',
+      sp_path: 'publish.html',
+      sp_desc: '填写商品信息，快速发布闲置物品',
+      sp_tag: ''
+    },
+    {
+      sp_name: '我的商品',
+      sp_path: 'my_goods.html',
+      sp_desc: '管理自己发布的商品，支持下架、重新上架与删除',
+      sp_tag: ''
+    },
+    {
+      sp_name: '登录 / 注册',
+      sp_path: 'login.html',
+      sp_desc: '账号登录与注册，登录后即可发布与收藏商品',
+      sp_tag: ''
     }
   ];
 

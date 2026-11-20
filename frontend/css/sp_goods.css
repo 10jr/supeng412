@@ -1,0 +1,435 @@
+/*
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：商品相关页面样式（列表、详情、发布、我的商品）
+*/
+
+/* ---------- 工具条 / 分类筛选 ---------- */
+.sp_toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.sp_search {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 320px;
+  min-width: 240px;
+}
+
+.sp_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.sp_chip {
+  padding: 8px 16px;
+  border: 1px solid var(--sp_line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--sp_muted);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.sp_chip:hover {
+  color: var(--sp_text);
+  border-color: rgba(91, 140, 255, 0.45);
+}
+
+.sp_chip.sp_active {
+  color: #061018;
+  font-weight: 600;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--sp_cyan), var(--sp_blue));
+}
+
+/* ---------- 商品卡片 ---------- */
+.sp_goods_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.sp_goods_card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--sp_line);
+  border-radius: 18px;
+  background: var(--sp_card);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.26s ease, border-color 0.26s ease, box-shadow 0.26s ease;
+}
+
+.sp_goods_card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(91, 140, 255, 0.5);
+  box-shadow: 0 18px 36px -24px rgba(91, 140, 255, 0.95);
+}
+
+.sp_thumb {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 148px;
+  padding: 12px;
+  background: linear-gradient(135deg, #23406e, #16233f);
+}
+
+.sp_thumb_cat {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(6, 10, 22, 0.55);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  backdrop-filter: blur(4px);
+}
+
+.sp_thumb_cond {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border: 1px solid rgba(46, 230, 214, 0.4);
+  border-radius: 999px;
+  background: rgba(46, 230, 214, 0.16);
+  color: #7ff3e8;
+  font-size: 12px;
+}
+
+/* 分类缩略图配色 */
+.sp_thumb_1 { background: linear-gradient(135deg, #24467d, #17253f); }
+.sp_thumb_2 { background: linear-gradient(135deg, #2d5b4e, #152a2a); }
+.sp_thumb_3 { background: linear-gradient(135deg, #3a447a, #1b2038); }
+.sp_thumb_4 { background: linear-gradient(135deg, #6b4426, #2b1c14); }
+.sp_thumb_5 { background: linear-gradient(135deg, #6d3054, #2a1524); }
+.sp_thumb_6 { background: linear-gradient(135deg, #4a3a6b, #221a33); }
+.sp_thumb_7 { background: linear-gradient(135deg, #2b5a66, #14262d); }
+.sp_thumb_8 { background: linear-gradient(135deg, #5a5a2b, #262610); }
+.sp_thumb_9 { background: linear-gradient(135deg, #23406e, #16233f); }
+
+.sp_goods_body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px 18px;
+}
+
+.sp_goods_title {
+  display: -webkit-box;
+  min-height: 45px;
+  margin: 0;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.sp_price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sp_price_now {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--sp_cyan);
+}
+
+.sp_price_old {
+  font-size: 13px;
+  color: var(--sp_muted);
+  text-decoration: line-through;
+}
+
+.sp_goods_meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--sp_muted);
+}
+
+/* ---------- 分页 ---------- */
+.sp_pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.sp_page_btn {
+  min-width: 38px;
+  padding: 8px 12px;
+  border: 1px solid var(--sp_line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--sp_text);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.sp_page_btn.sp_active {
+  color: #061018;
+  font-weight: 700;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--sp_cyan), var(--sp_blue));
+}
+
+.sp_page_btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------- 商品详情 ---------- */
+.sp_detail {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
+}
+
+.sp_detail_thumb {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 290px;
+  padding: 18px;
+  border: 1px solid var(--sp_line);
+  border-radius: 20px;
+}
+
+.sp_detail_title {
+  margin: 0 0 12px;
+  font-size: 26px;
+  line-height: 1.4;
+}
+
+.sp_detail_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sp_badge {
+  padding: 4px 12px;
+  border: 1px solid rgba(91, 140, 255, 0.4);
+  border-radius: 999px;
+  background: rgba(91, 140, 255, 0.12);
+  color: #a9c1ff;
+  font-size: 12px;
+}
+
+.sp_detail_price {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+.sp_detail_price .sp_price_now {
+  font-size: 34px;
+}
+
+.sp_detail_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  padding: 18px 0;
+  margin: 0 0 20px;
+  border-top: 1px solid var(--sp_line);
+  border-bottom: 1px solid var(--sp_line);
+}
+
+.sp_detail_item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--sp_muted);
+}
+
+.sp_detail_item strong {
+  font-weight: 600;
+  color: var(--sp_text);
+}
+
+.sp_desc_title {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.sp_desc_text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #c8d3ea;
+  white-space: pre-wrap;
+}
+
+.sp_seller {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  margin-top: 22px;
+  border: 1px solid var(--sp_line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sp_seller_info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--sp_muted);
+}
+
+.sp_seller_info strong {
+  font-size: 15px;
+  color: var(--sp_text);
+}
+
+.sp_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* ---------- 我的商品 ---------- */
+.sp_my_list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sp_my_item {
+  display: grid;
+  grid-template-columns: 78px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 16px 20px;
+  border: 1px solid var(--sp_line);
+  border-radius: 16px;
+  background: var(--sp_card);
+}
+
+.sp_my_thumb {
+  display: grid;
+  place-items: center;
+  height: 66px;
+  border-radius: 12px;
+  color: #061018;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sp_my_info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.sp_my_title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.sp_my_meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--sp_muted);
+}
+
+.sp_status {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--sp_line);
+  color: var(--sp_muted);
+}
+
+.sp_status_1 {
+  color: var(--sp_cyan);
+  border-color: rgba(46, 230, 214, 0.4);
+  background: rgba(46, 230, 214, 0.1);
+}
+
+.sp_status_2 {
+  color: #c3a8ff;
+  border-color: rgba(169, 123, 255, 0.4);
+  background: rgba(169, 123, 255, 0.1);
+}
+
+.sp_my_actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* ---------- 发布表单 ---------- */
+.sp_form_panel {
+  max-width: 760px;
+}
+
+.sp_form_actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 900px) {
+  .sp_detail {
+    grid-template-columns: 1fr;
+  }
+
+  .sp_detail_thumb {
+    min-height: 200px;
+  }
+
+  .sp_my_item {
+    grid-template-columns: 66px 1fr;
+  }
+
+  .sp_my_actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .sp_detail_list {
+    grid-template-columns: 1fr;
+  }
+
+  .sp_goods_grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -7,6 +7,9 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const spNavRoutes = require('./routes/sp_navRoutes');
+const spAuthRoutes = require('./routes/sp_authRoutes');
+const spCategoryRoutes = require('./routes/sp_categoryRoutes');
+const spGoodsRoutes = require('./routes/sp_goodsRoutes');
 
 const spApp = express();
 const spPort = 8412;
@@ -32,6 +35,9 @@ spApp.get('/api/health', (spReq, spRes) => {
 
 // 业务路由统一挂载在 /api 前缀下
 spApp.use('/api', spNavRoutes);
+spApp.use('/api/auth', spAuthRoutes);
+spApp.use('/api/categories', spCategoryRoutes);
+spApp.use('/api/goods', spGoodsRoutes);
 
 /**
  * 未匹配到的 /api 接口统一返回 404 JSON，避免返回 HTML

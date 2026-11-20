@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：发布商品页，填写商品信息并提交到后端
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发布商品 | 校园二手集市</title>
+  <link rel="stylesheet" href="css/sp_common.css">
+  <link rel="stylesheet" href="css/sp_goods.css">
+</head>
+<body class="sp_body">
+  <canvas id="sp_canvas" class="sp_canvas"></canvas>
+  <div class="sp_orb sp_orb_a"></div>
+  <div class="sp_orb sp_orb_b"></div>
+
+  <div class="sp_page">
+    <main class="sp_shell sp_main">
+      <div class="sp_page_head">
+        <div>
+          <h1 class="sp_page_title">发布商品</h1>
+          <p class="sp_page_desc">填写真实的商品信息，让买家更快找到它</p>
+        </div>
+        <a class="sp_btn sp_btn_ghost" href="my_goods.html">我的商品</a>
+      </div>
+
+      <section class="sp_panel sp_form_panel">
+        <form id="sp_publishForm" novalidate>
+          <div class="sp_field">
+            <label for="sp_title">商品标题</label>
+            <input class="sp_input" type="text" id="sp_title" maxlength="80" placeholder="如：iPad 2021 第九代 64G 深空灰">
+          </div>
+
+          <div class="sp_form_row">
+            <div class="sp_field">
+              <label for="sp_category">商品分类</label>
+              <select class="sp_select" id="sp_category">
+                <option value="">请选择分类</option>
+              </select>
+            </div>
+            <div class="sp_field">
+              <label for="sp_condition">商品成色</label>
+              <select class="sp_select" id="sp_condition">
+                <option value="">请选择成色</option>
+                <option value="全新">全新</option>
+                <option value="九成新">九成新</option>
+                <option value="八成新">八成新</option>
+                <option value="七成新">七成新</option>
+                <option value="有瑕疵">有瑕疵</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sp_form_row">
+            <div class="sp_field">
+              <label for="sp_price">出售价格（元）</label>
+              <input class="sp_input" type="number" id="sp_price" min="0.01" step="0.01" placeholder="如：1650">
+            </div>
+            <div class="sp_field">
+              <label for="sp_original_price">原价（元，选填）</label>
+              <input class="sp_input" type="number" id="sp_original_price" min="0" step="0.01" placeholder="如：2499">
+            </div>
+          </div>
+
+          <div class="sp_field">
+            <label for="sp_desc">商品描述</label>
+            <textarea class="sp_textarea" id="sp_desc" maxlength="500" placeholder="描述使用情况、配件、交易地点等，最多 500 字"></textarea>
+          </div>
+
+          <p class="sp_form_tip" id="sp_publishTip"></p>
+          <div class="sp_form_actions">
+            <button class="sp_btn sp_btn_primary" type="submit" id="sp_publishSubmit">立即发布</button>
+            <a class="sp_btn sp_btn_ghost" href="goods_list.html">取消</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="sp_shell sp_foot">
+      <span>© 2026 苏鹏 · 24002120412</span>
+      <span>校园二手交易平台</span>
+    </footer>
+  </div>
+
+  <script src="js/sp_common.js"></script>
+  <script src="js/sp_background.js"></script>
+  <script src="js/sp_publish.js"></script>
+</body>
+</html>

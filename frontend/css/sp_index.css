@@ -1,90 +1,12 @@
 /*
   姓名：苏鹏 | 学号：24002120412
   时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
-  功能：首页样式，深色渐变 + 玻璃拟态卡片 + 响应式导航布局
+  功能：首页专属样式（首屏信息、页面导航卡片）
 */
 
-:root {
-  --sp_bg: #070b18;
-  --sp_text: #e9eefb;
-  --sp_muted: #93a1c0;
-  --sp_line: rgba(255, 255, 255, 0.1);
-  --sp_card: rgba(255, 255, 255, 0.05);
-  --sp_blue: #5b8cff;
-  --sp_cyan: #2ee6d6;
-  --sp_violet: #a97bff;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-height: 100vh;
-  background: var(--sp_bg);
-  color: var(--sp_text);
-  font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-/* ---------- 背景层 ---------- */
-.sp_canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.sp_orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.5;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.sp_orb_a {
-  width: 460px;
-  height: 460px;
-  top: -160px;
-  left: -120px;
-  background: radial-gradient(circle, rgba(91, 140, 255, 0.55), transparent 70%);
-}
-
-.sp_orb_b {
-  width: 520px;
-  height: 520px;
-  right: -180px;
-  bottom: -220px;
-  background: radial-gradient(circle, rgba(46, 230, 214, 0.35), transparent 70%);
-}
-
-/* ---------- 页面骨架 ---------- */
 .sp_page {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   gap: 56px;
   padding: 72px 0 32px;
-}
-
-.sp_shell {
-  width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 28px;
 }
 
 /* ---------- 首屏信息 ---------- */
@@ -169,7 +91,9 @@ body {
 }
 
 /* ---------- 导航区 ---------- */
-.sp_main {
+.sp_index_main {
+  padding-top: 0;
+  padding-bottom: 0;
   animation: sp_rise 0.9s 0.12s ease both;
 }
 
@@ -315,15 +239,7 @@ body {
 /* ---------- 页脚 ---------- */
 .sp_foot {
   margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
   padding-top: 22px;
-  border-top: 1px solid var(--sp_line);
-  font-size: 12px;
-  color: var(--sp_muted);
-  letter-spacing: 0.06em;
 }
 
 @keyframes sp_rise {
@@ -343,10 +259,6 @@ body {
     gap: 40px;
   }
 
-  .sp_shell {
-    padding: 0 18px;
-  }
-
   .sp_meta_item {
     flex: 1 1 100%;
   }
@@ -354,7 +266,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .sp_hero,
-  .sp_main {
+  .sp_index_main {
     animation: none;
   }
 

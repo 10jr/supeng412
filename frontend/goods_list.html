@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：商品列表页，支持关键词搜索、分类筛选与分页浏览
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品列表 | 校园二手集市</title>
+  <link rel="stylesheet" href="css/sp_common.css">
+  <link rel="stylesheet" href="css/sp_goods.css">
+</head>
+<body class="sp_body">
+  <canvas id="sp_canvas" class="sp_canvas"></canvas>
+  <div class="sp_orb sp_orb_a"></div>
+  <div class="sp_orb sp_orb_b"></div>
+
+  <div class="sp_page">
+    <main class="sp_shell sp_main">
+      <div class="sp_page_head">
+        <div>
+          <h1 class="sp_page_title">商品列表</h1>
+          <p class="sp_page_desc" id="sp_listSummary">正在加载商品…</p>
+        </div>
+        <a class="sp_btn sp_btn_primary" href="publish.html">发布闲置</a>
+      </div>
+
+      <div class="sp_toolbar">
+        <div class="sp_search">
+          <input class="sp_input" type="text" id="sp_keyword" placeholder="搜索商品标题或描述，如：iPad">
+          <button class="sp_btn sp_btn_primary" type="button" id="sp_searchBtn">搜索</button>
+        </div>
+        <button class="sp_btn sp_btn_ghost" type="button" id="sp_resetBtn">重置筛选</button>
+      </div>
+
+      <div class="sp_chips" id="sp_chips"></div>
+      <div class="sp_goods_grid" id="sp_goodsGrid"></div>
+      <div class="sp_pagination" id="sp_pagination"></div>
+    </main>
+
+    <footer class="sp_shell sp_foot">
+      <span>© 2026 苏鹏 · 24002120412</span>
+      <span>校园二手交易平台</span>
+    </footer>
+  </div>
+
+  <script src="js/sp_common.js"></script>
+  <script src="js/sp_background.js"></script>
+  <script src="js/sp_goods_list.js"></script>
+</body>
+</html>

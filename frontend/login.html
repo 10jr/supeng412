@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：登录与注册页面，登录成功后进入商品列表
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 / 注册 | 校园二手集市</title>
+  <link rel="stylesheet" href="css/sp_common.css">
+  <link rel="stylesheet" href="css/sp_auth.css">
+</head>
+<body class="sp_body">
+  <canvas id="sp_canvas" class="sp_canvas"></canvas>
+  <div class="sp_orb sp_orb_a"></div>
+  <div class="sp_orb sp_orb_b"></div>
+
+  <div class="sp_page">
+    <main class="sp_shell sp_main sp_auth_main">
+      <section class="sp_panel sp_auth_card">
+        <h1 class="sp_auth_title">校园二手集市</h1>
+        <p class="sp_auth_sub">登录后即可发布闲置、管理商品</p>
+
+        <div class="sp_auth_tabs">
+          <button type="button" class="sp_auth_tab sp_active" id="sp_tabLogin">登录</button>
+          <button type="button" class="sp_auth_tab" id="sp_tabRegister">注册</button>
+        </div>
+
+        <form class="sp_auth_form" id="sp_loginForm" novalidate>
+          <div class="sp_field">
+            <label for="sp_loginUsername">账号</label>
+            <input class="sp_input" type="text" id="sp_loginUsername" autocomplete="username" placeholder="请输入账号">
+          </div>
+          <div class="sp_field">
+            <label for="sp_loginPassword">密码</label>
+            <input class="sp_input" type="password" id="sp_loginPassword" autocomplete="current-password" placeholder="请输入密码">
+          </div>
+          <p class="sp_form_tip" id="sp_loginTip"></p>
+          <button class="sp_btn sp_btn_primary sp_auth_submit" type="submit" id="sp_loginSubmit">登录</button>
+          <p class="sp_auth_hint">测试账号：sp_supeng / 123456</p>
+        </form>
+
+        <form class="sp_auth_form sp_hidden" id="sp_registerForm" novalidate>
+          <div class="sp_field">
+            <label for="sp_regUsername">账号</label>
+            <input class="sp_input" type="text" id="sp_regUsername" placeholder="3-20 个字符，注册后不可修改">
+          </div>
+          <div class="sp_field">
+            <label for="sp_regPassword">密码</label>
+            <input class="sp_input" type="password" id="sp_regPassword" placeholder="不少于 6 位">
+          </div>
+          <div class="sp_field">
+            <label for="sp_regNickname">昵称</label>
+            <input class="sp_input" type="text" id="sp_regNickname" placeholder="展示在商品详情页">
+          </div>
+          <div class="sp_form_row">
+            <div class="sp_field">
+              <label for="sp_regPhone">手机号</label>
+              <input class="sp_input" type="tel" id="sp_regPhone" placeholder="11 位手机号">
+            </div>
+            <div class="sp_field">
+              <label for="sp_regCampus">校区</label>
+              <input class="sp_input" type="text" id="sp_regCampus" placeholder="如：南校区">
+            </div>
+          </div>
+          <p class="sp_form_tip" id="sp_regTip"></p>
+          <button class="sp_btn sp_btn_primary sp_auth_submit" type="submit" id="sp_regSubmit">注册并登录</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="sp_shell sp_foot">
+      <span>© 2026 苏鹏 · 24002120412</span>
+      <span>原生 HTML / CSS / JavaScript</span>
+    </footer>
+  </div>
+
+  <script src="js/sp_common.js"></script>
+  <script src="js/sp_background.js"></script>
+  <script src="js/sp_auth.js"></script>
+</body>
+</html>
