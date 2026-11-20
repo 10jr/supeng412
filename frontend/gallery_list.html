@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：图文列表页，展示后端接口链接与数据库中的图文数据
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图文列表 | 校园二手集市</title>
+  <link rel="stylesheet" href="css/sp_common.css">
+  <link rel="stylesheet" href="css/sp_news.css">
+  <link rel="stylesheet" href="css/sp_gallery.css">
+</head>
+<body class="sp_body">
+  <canvas id="sp_canvas" class="sp_canvas"></canvas>
+  <div class="sp_orb sp_orb_a"></div>
+  <div class="sp_orb sp_orb_b"></div>
+
+  <div class="sp_page">
+    <main class="sp_shell sp_main">
+      <div class="sp_page_head">
+        <div>
+          <h1 class="sp_page_title">图文列表</h1>
+          <p class="sp_page_desc" id="sp_gallerySummary">正在加载图文…</p>
+        </div>
+        <a class="sp_btn sp_btn_ghost" href="index.html">返回首页</a>
+      </div>
+
+      <div class="sp_api_box">
+        <span class="sp_api_label">后端接口</span>
+        <code class="sp_api_method">GET</code>
+        <a class="sp_api_link" id="sp_apiLink" href="/api/gallery" target="_blank" rel="noopener">/api/gallery</a>
+        <span class="sp_api_hint">点击链接可在新窗口查看接口返回的 JSON 数据</span>
+      </div>
+
+      <div class="sp_gallery_grid" id="sp_galleryGrid"></div>
+    </main>
+
+    <footer class="sp_shell sp_foot">
+      <span>© 2026 苏鹏 · 24002120412</span>
+      <span>数据来源：MySQL 表 sp_gallery</span>
+    </footer>
+  </div>
+
+  <script src="js/sp_common.js"></script>
+  <script src="js/sp_background.js"></script>
+  <script src="js/sp_gallery_list.js"></script>
+</body>
+</html>

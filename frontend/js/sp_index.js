@@ -47,6 +47,12 @@
       sp_path: 'news_list.html',
       sp_desc: '展示 MySQL 表 sp_news 中的科技新闻数据与后端接口链接',
       sp_tag: ''
+    },
+    {
+      sp_name: '图文列表',
+      sp_path: 'gallery_list.html',
+      sp_desc: '展示 MySQL 表 sp_gallery 中的图文数据与本地生成图片',
+      sp_tag: ''
     }
   ];
 

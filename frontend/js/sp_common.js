@@ -171,7 +171,8 @@
       { sp_name: '商品列表', sp_path: 'goods_list.html' },
       { sp_name: '发布商品', sp_path: 'publish.html' },
       { sp_name: '我的商品', sp_path: 'my_goods.html' },
-      { sp_name: '科技新闻', sp_path: 'news_list.html' }
+      { sp_name: '科技新闻', sp_path: 'news_list.html' },
+      { sp_name: '图文列表', sp_path: 'gallery_list.html' }
     ];
     const spUser = sp_getUser();
 

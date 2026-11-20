@@ -12,6 +12,7 @@ const spCategoryRoutes = require('./routes/sp_categoryRoutes');
 const spGoodsRoutes = require('./routes/sp_goodsRoutes');
 const spDatabaseRoutes = require('./routes/sp_databaseRoutes');
 const spNewsRoutes = require('./routes/sp_newsRoutes');
+const spGalleryRoutes = require('./routes/sp_galleryRoutes');
 
 const spApp = express();
 const spPort = 8412;
@@ -42,6 +43,7 @@ spApp.use('/api/categories', spCategoryRoutes);
 spApp.use('/api/goods', spGoodsRoutes);
 spApp.use('/api/database', spDatabaseRoutes);
 spApp.use('/api/news', spNewsRoutes);
+spApp.use('/api/gallery', spGalleryRoutes);
 
 /**
  * 未匹配到的 /api 接口统一返回 404 JSON，避免返回 HTML

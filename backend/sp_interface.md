@@ -472,3 +472,43 @@ GET http://localhost:8412/api/news?sp_tag=通信
 ```
 
 - 修改时间：2026-11-20 15:20
+
+---
+
+## 获取图文列表
+
+- 接口路径：`/api/gallery`
+- HTTP 方法：`GET`
+- 请求参数（Query，可选）：`sp_tag` 标签，如 `数码`
+
+请求示例：
+
+```
+GET http://localhost:8412/api/gallery
+GET http://localhost:8412/api/gallery?sp_tag=书籍
+```
+
+- 响应格式（`sp_image_url` 为相对 frontend 根目录的图片路径）：
+
+```json
+{
+  "code": 0,
+  "msg": "获取图文列表成功",
+  "data": {
+    "sp_total": 8,
+    "sp_list": [
+      {
+        "sp_id": 1,
+        "sp_title": "宿舍桌面数码套装",
+        "sp_desc": "平板 + 无线键盘 + 蓝牙音箱，屏幕无划痕，键盘键位完好，毕业打包出，可当面验货。",
+        "sp_image_url": "images/gallery/sp_gallery_1.jpg",
+        "sp_tag": "数码",
+        "sp_publish_time": "2026-11-19T02:10:00.000Z",
+        "sp_view_count": 328
+      }
+    ]
+  }
+}
+```
+
+- 修改时间：2026-11-20 15:45
