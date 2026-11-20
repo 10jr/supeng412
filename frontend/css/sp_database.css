@@ -1,0 +1,75 @@
+/*
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：数据库连接页样式（表单面板与连接结果提示）
+*/
+
+.sp_db_panel {
+  max-width: 620px;
+}
+
+.sp_db_result {
+  margin-top: 22px;
+}
+
+.sp_db_box {
+  padding: 18px 20px;
+  border: 1px solid var(--sp_line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.sp_db_success {
+  border-color: rgba(46, 230, 214, 0.45);
+  background: rgba(46, 230, 214, 0.08);
+  color: #b8fff7;
+}
+
+.sp_db_error {
+  border-color: rgba(255, 94, 120, 0.45);
+  background: rgba(255, 94, 120, 0.08);
+  color: #ffb3bf;
+}
+
+.sp_db_title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sp_db_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.sp_db_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sp_db_list li {
+  padding: 6px 10px;
+  border: 1px solid var(--sp_line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  color: var(--sp_text);
+}
+
+.sp_db_desc {
+  margin: 6px 0 0;
+  font-size: 13px;
+  opacity: 0.85;
+}

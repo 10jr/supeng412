@@ -35,6 +35,12 @@
       sp_path: 'login.html',
       sp_desc: '账号登录与注册，登录后即可发布与收藏商品',
       sp_tag: ''
+    },
+    {
+      sp_name: '数据库连接',
+      sp_path: 'database.html',
+      sp_desc: '输入 MySQL 账号密码，测试数据库连接是否成功',
+      sp_tag: ''
     }
   ];
 

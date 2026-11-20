@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：数据库连接测试页，输入 MySQL 账号密码验证是否连接成功
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据库连接 | 校园二手集市</title>
+  <link rel="stylesheet" href="css/sp_common.css">
+  <link rel="stylesheet" href="css/sp_database.css">
+</head>
+<body class="sp_body">
+  <canvas id="sp_canvas" class="sp_canvas"></canvas>
+  <div class="sp_orb sp_orb_a"></div>
+  <div class="sp_orb sp_orb_b"></div>
+
+  <div class="sp_page">
+    <main class="sp_shell sp_main">
+      <div class="sp_page_head">
+        <div>
+          <h1 class="sp_page_title">数据库连接</h1>
+          <p class="sp_page_desc">输入 MySQL 账号密码，测试后端能否成功连接数据库</p>
+        </div>
+        <a class="sp_btn sp_btn_ghost" href="index.html">返回首页</a>
+      </div>
+
+      <section class="sp_panel sp_db_panel">
+        <form id="sp_dbForm" novalidate>
+          <div class="sp_field">
+            <label for="sp_dbUser">用户名</label>
+            <input class="sp_input" type="text" id="sp_dbUser" value="root" placeholder="请输入数据库用户名">
+          </div>
+          <div class="sp_field">
+            <label for="sp_dbPassword">密码</label>
+            <input class="sp_input" type="password" id="sp_dbPassword" value="060701" placeholder="请输入数据库密码">
+          </div>
+          <p class="sp_form_tip" id="sp_dbTip"></p>
+          <div class="sp_form_actions">
+            <button class="sp_btn sp_btn_primary" type="submit" id="sp_dbSubmit">测试连接</button>
+            <button class="sp_btn sp_btn_ghost" type="button" id="sp_dbReset">重置</button>
+          </div>
+        </form>
+
+        <div class="sp_db_result" id="sp_dbResult"></div>
+      </section>
+    </main>
+
+    <footer class="sp_shell sp_foot">
+      <span>© 2026 苏鹏 · 24002120412</span>
+      <span>校园二手交易平台</span>
+    </footer>
+  </div>
+
+  <script src="js/sp_common.js"></script>
+  <script src="js/sp_background.js"></script>
+  <script src="js/sp_database.js"></script>
+</body>
+</html>

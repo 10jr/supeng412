@@ -385,3 +385,49 @@ DELETE http://localhost:8412/api/goods/1?sp_userId=1
 ```
 
 - 修改时间：2026-11-20 14:40
+
+---
+
+## 测试数据库连接
+
+- 接口路径：`/api/database/test`
+- HTTP 方法：`POST`
+- 请求参数（JSON）：
+
+| 字段 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sp_user | string | 是 | MySQL 用户名 |
+| sp_password | string | 否 | MySQL 密码 |
+
+请求示例：
+
+```json
+{ "sp_user": "root", "sp_password": "060701" }
+```
+
+- 响应格式（成功时返回版本号与可见数据库列表，单次最多 30 个）：
+
+```json
+{
+  "code": 0,
+  "msg": "数据库连接成功",
+  "data": {
+    "sp_host": "127.0.0.1",
+    "sp_user": "root",
+    "sp_version": "8.0.30",
+    "sp_databases": ["information_schema", "mysql", "sp_campus_market", "sys"]
+  }
+}
+```
+
+- 响应格式（失败示例）：
+
+```json
+{
+  "code": 1,
+  "msg": "用户名或密码错误，请检查后重试",
+  "data": { "sp_code": "ER_ACCESS_DENIED_ERROR" }
+}
+```
+
+- 修改时间：2026-11-20 15:05
