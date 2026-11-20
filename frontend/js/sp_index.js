@@ -41,6 +41,12 @@
       sp_path: 'database.html',
       sp_desc: '输入 MySQL 账号密码，测试数据库连接是否成功',
       sp_tag: ''
+    },
+    {
+      sp_name: '科技新闻',
+      sp_path: 'news_list.html',
+      sp_desc: '展示 MySQL 表 sp_news 中的科技新闻数据与后端接口链接',
+      sp_tag: ''
     }
   ];
 

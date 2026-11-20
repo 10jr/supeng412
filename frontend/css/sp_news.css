@@ -1,0 +1,127 @@
+/*
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
+  功能：科技新闻列表页样式（接口信息条与新闻卡片）
+*/
+
+.sp_api_box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(91, 140, 255, 0.35);
+  border-radius: 14px;
+  background: rgba(91, 140, 255, 0.08);
+}
+
+.sp_api_label {
+  font-size: 13px;
+  color: var(--sp_muted);
+  letter-spacing: 0.08em;
+}
+
+.sp_api_method {
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: rgba(46, 230, 214, 0.15);
+  color: var(--sp_cyan);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sp_api_link {
+  color: #a9c1ff;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(169, 193, 255, 0.5);
+}
+
+.sp_api_link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.sp_api_hint {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--sp_muted);
+}
+
+.sp_news_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp_news_card {
+  padding: 22px 24px;
+  border: 1px solid var(--sp_line);
+  border-radius: 18px;
+  background: var(--sp_card);
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sp_news_card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(91, 140, 255, 0.45);
+  box-shadow: 0 18px 40px -26px rgba(91, 140, 255, 0.9);
+}
+
+.sp_news_top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sp_news_tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(169, 123, 255, 0.4);
+  background: rgba(169, 123, 255, 0.12);
+  color: #c3a8ff;
+  font-size: 12px;
+}
+
+.sp_news_title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.sp_news_summary {
+  margin: 10px 0 14px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #c3cee5;
+}
+
+.sp_news_meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--sp_muted);
+}
+
+.sp_news_index {
+  color: var(--sp_cyan);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 560px) {
+  .sp_api_hint {
+    margin-left: 0;
+  }
+
+  .sp_news_card {
+    padding: 18px;
+  }
+}

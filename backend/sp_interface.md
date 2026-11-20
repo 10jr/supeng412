@@ -431,3 +431,44 @@ DELETE http://localhost:8412/api/goods/1?sp_userId=1
 ```
 
 - 修改时间：2026-11-20 15:05
+
+---
+
+## 获取科技新闻列表
+
+- 接口路径：`/api/news`
+- HTTP 方法：`GET`
+- 请求参数（Query，可选）：`sp_tag` 科技标签，如 `人工智能`
+
+请求示例：
+
+```
+GET http://localhost:8412/api/news
+GET http://localhost:8412/api/news?sp_tag=通信
+```
+
+- 响应格式：
+
+```json
+{
+  "code": 0,
+  "msg": "获取科技新闻成功",
+  "data": {
+    "sp_total": 10,
+    "sp_list": [
+      {
+        "sp_id": 1,
+        "sp_title": "国产大模型开源新版本，推理成本下降四成",
+        "sp_summary": "新版本在长文本理解与代码生成任务上表现突出，官方同步开放量化部署方案。",
+        "sp_source": "科技前线",
+        "sp_author": "林一舟",
+        "sp_tag": "人工智能",
+        "sp_publish_time": "2026-11-19T01:20:00.000Z",
+        "sp_view_count": 1862
+      }
+    ]
+  }
+}
+```
+
+- 修改时间：2026-11-20 15:20
