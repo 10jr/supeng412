@@ -28,11 +28,22 @@
         <a class="sp_btn sp_btn_ghost" href="index.html">返回首页</a>
       </div>
 
-      <div class="sp_api_box">
-        <span class="sp_api_label">后端接口</span>
-        <code class="sp_api_method">GET</code>
-        <a class="sp_api_link" id="sp_apiLink" href="/api/gallery" target="_blank" rel="noopener">/api/gallery</a>
-        <span class="sp_api_hint">点击链接可在新窗口查看接口返回的 JSON 数据</span>
+      <div class="sp_info_bar" id="sp_infoBar">
+        <div class="sp_info_item">
+          <span class="sp_info_label">接口地址</span>
+          <span class="sp_info_value">
+            <code class="sp_api_method">GET</code>
+            <a class="sp_api_link" id="sp_apiLink" href="/api/gallery" target="_blank" rel="noopener">/api/gallery</a>
+          </span>
+        </div>
+        <div class="sp_info_item">
+          <span class="sp_info_label">数据表</span>
+          <span class="sp_info_value sp_info_code" id="sp_infoTable">sp_gallery</span>
+        </div>
+        <div class="sp_info_item">
+          <span class="sp_info_label">数据量</span>
+          <span class="sp_info_value">共 <strong id="sp_infoCount">0</strong> 条图文</span>
+        </div>
       </div>
 
       <div class="sp_gallery_grid" id="sp_galleryGrid"></div>

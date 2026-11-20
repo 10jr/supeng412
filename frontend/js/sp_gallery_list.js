@@ -7,6 +7,8 @@
   const spGrid = document.getElementById('sp_galleryGrid');
   const spSummary = document.getElementById('sp_gallerySummary');
   const spApiLink = document.getElementById('sp_apiLink');
+  const spInfoTable = document.getElementById('sp_infoTable');
+  const spInfoCount = document.getElementById('sp_infoCount');
 
   /**
    * 日期格式化
@@ -56,14 +58,17 @@
   async function sp_loadGallery() {
     spApiLink.href = location.origin + '/api/gallery';
     spApiLink.textContent = location.origin + '/api/gallery';
+    spInfoTable.textContent = 'sp_gallery';
 
     try {
       const spData = await sp_api('/api/gallery');
       sp_renderGallery(spData.sp_list);
-      spSummary.textContent = '共 ' + spData.sp_total + ' 条图文，数据来自 MySQL 表 sp_gallery';
+      spInfoCount.textContent = String(spData.sp_total);
+      spSummary.textContent = '图片与文案均来自 MySQL 数据表 sp_gallery，由后端接口返回后渲染到页面。';
     } catch (spErr) {
       spGrid.innerHTML = '<p class="sp_empty">图文加载失败：' + sp_escapeHtml(spErr.message) + '</p>';
       spSummary.textContent = '加载失败';
+      spInfoCount.textContent = '0';
     }
   }
 

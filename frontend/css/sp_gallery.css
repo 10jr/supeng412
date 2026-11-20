@@ -1,8 +1,63 @@
 /*
   姓名：苏鹏 | 学号：24002120412
   时间：2026-11-20 | 大模型：DeepSeek-V4.1-Flash
-  功能：图文列表页样式（图文卡片网格）
+  功能：图文列表页样式（图文卡片网格与接口信息条）
 */
+
+.sp_info_bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 24px;
+  border: 1px solid var(--sp_line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(18, 28, 52, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.sp_info_item {
+  flex: 1 1 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  border-right: 1px solid var(--sp_line);
+}
+
+.sp_info_item:last-child {
+  border-right: none;
+}
+
+.sp_info_label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--sp_muted);
+}
+
+.sp_info_value {
+  font-size: 14px;
+  color: var(--sp_text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sp_info_code {
+  font-family: 'Consolas', 'Menlo', monospace;
+  color: var(--sp_cyan);
+  background: rgba(46, 230, 214, 0.1);
+  border: 1px solid rgba(46, 230, 214, 0.25);
+  border-radius: 8px;
+  padding: 2px 10px;
+}
+
+.sp_info_value strong {
+  color: var(--sp_cyan);
+  font-size: 18px;
+  font-weight: 700;
+}
 
 .sp_gallery_grid {
   display: grid;
