@@ -93,6 +93,31 @@
 > 你看红框的位置这是需要的他的是8400，我是8412还有为啥我的图文列表里没图片
 ---
 
+---
+**时间**: 2026-11-25 09:30
+**模型**: DeepSeek-V4.1-Flash
+**提示词内容**:
+> # 硅基流动 API Key
+> SILICONFLOW_API_KEY=你的key
+> # API 接入地址（固定）
+> SILICONFLOW_BASE_URL=" https://api.siliconflow.cn/v1 "
+> SILICONFLOW_MODEL="Qwen/Qwen2.5-7B-Instruct"
+> SILICONFLOW_VISION_MODEL="Qwen/Qwen3-VL-8B-Instruct"
+> # AI 默认服务商：siliconflow / qiniu
+> AI_PROVIDER=siliconflow
+> # 七牛在线客服 API 配置（QINIU_ 前缀，明确区分其他服务）
+> QINIU_CUSTOMER_SERVICE_BASE_URL=" https://api.qnaigc.com/v1 "
+> QINIU_CUSTOMER_SERVICE_MODEL="qiniu/conatus-free"
+> QINIU_CUSTOMER_SERVICE_API_KEY=sk-****（已脱敏）放到env里
+---
+
+---
+**时间**: 2026-11-25 09:40
+**模型**: DeepSeek-V4.1-Flash
+**提示词内容**:
+> 好的，创建 AI 接口
+---
+
 
 
 

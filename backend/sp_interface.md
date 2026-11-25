@@ -512,3 +512,83 @@ GET http://localhost:8412/api/gallery?sp_tag=书籍
 ```
 
 - 修改时间：2026-11-20 15:45
+
+---
+
+## 查询 AI 配置
+
+- 接口路径：`/api/ai/info`
+- HTTP 方法：`GET`
+- 请求参数（Query，可选）：`sp_provider` 服务商，`siliconflow` / `qiniu`，默认取 .env 的 `AI_PROVIDER`
+
+请求示例：
+
+```
+GET http://localhost:8412/api/ai/info
+GET http://localhost:8412/api/ai/info?sp_provider=qiniu
+```
+
+- 响应格式（不返回密钥本身，仅返回是否已配置）：
+
+```json
+{
+  "code": 0,
+  "msg": "获取 AI 配置成功",
+  "data": {
+    "sp_provider": "siliconflow",
+    "sp_model": "Qwen/Qwen2.5-7B-Instruct",
+    "sp_base_url": "https://api.siliconflow.cn/v1",
+    "sp_has_api_key": false
+  }
+}
+```
+
+- 修改时间：2026-11-25 09:40
+
+---
+
+## AI 对话
+
+- 接口路径：`/api/ai/chat`
+- HTTP 方法：`POST`
+- 请求参数（JSON）：
+
+| 字段 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sp_message | string | 二选一 | 单句提问，自动包装为 user 消息 |
+| sp_messages | array | 二选一 | 消息数组，元素为 `{ sp_role, sp_content }`，role 支持 system/user/assistant |
+| sp_system | string | 否 | 配合 sp_message 使用的系统提示词 |
+| sp_provider | string | 否 | 指定服务商 siliconflow / qiniu，不传取 AI_PROVIDER |
+| sp_temperature | number | 否 | 0-2，默认由模型决定 |
+| sp_max_tokens | number | 否 | 最大生成 token，上限 4096 |
+
+请求示例：
+
+```json
+{ "sp_message": "用一句话介绍你自己", "sp_provider": "qiniu", "sp_max_tokens": 64 }
+```
+
+- 响应格式（成功）：
+
+```json
+{
+  "code": 0,
+  "msg": "AI 回复成功",
+  "data": {
+    "sp_provider": "qiniu",
+    "sp_model": "qiniu/conatus-free",
+    "sp_reply": "我是一个乐于助人的 AI 助手。",
+    "sp_usage": { "prompt_tokens": 12, "completion_tokens": 18, "total_tokens": 30 }
+  }
+}
+```
+
+- 响应格式（失败示例）：
+
+```json
+{ "code": 500, "msg": "未配置 siliconflow 的 API Key，请在 backend/.env 中填写", "data": null }
+{ "code": 502, "msg": "AI 服务返回错误（HTTP 401）：{\"error\":{\"message\":\"Invalid API key\"}}", "data": null }
+{ "code": 400, "msg": "请传入 sp_message（单句）或 sp_messages（消息数组）", "data": null }
+```
+
+- 修改时间：2026-11-25 09:40
