@@ -61,6 +61,13 @@ const spPages = [
     sp_path: 'gallery_list.html',
     sp_desc: '展示 MySQL 表 sp_gallery 中的图文数据与本地生成图片',
     sp_tag: ''
+  },
+  {
+    sp_id: 9,
+    sp_name: '在线客服',
+    sp_path: 'customer_service.html',
+    sp_desc: '基于硅基流动大模型的智能客服，支持多轮对话问答',
+    sp_tag: ''
   }
 ];
 
