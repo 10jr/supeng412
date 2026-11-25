@@ -17,12 +17,21 @@ function sp_buildMessages(spBody) {
       return spItem && typeof spItem.sp_content === 'string' && spItem.sp_content.trim();
     });
     if (!spValid.length) return null;
-    return spValid.map(function (spItem) {
+    const spMessages = spValid.map(function (spItem) {
       return {
         role: ['system', 'assistant', 'user'].indexOf(spItem.sp_role) >= 0 ? spItem.sp_role : 'user',
         content: spItem.sp_content
       };
     });
+
+    // 数组里未包含 system 消息时，用 sp_system 补在开头
+    const spHasSystem = spMessages.some(function (spItem) {
+      return spItem.role === 'system';
+    });
+    if (!spHasSystem && typeof spBody.sp_system === 'string' && spBody.sp_system.trim()) {
+      spMessages.unshift({ role: 'system', content: spBody.sp_system });
+    }
+    return spMessages;
   }
 
   // 方式二：只传一句 sp_message，自动包裹成 user 消息
