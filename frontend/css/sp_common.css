@@ -387,6 +387,32 @@ a {
   }
 }
 
+/* ---------- file:// 打开提示条 ---------- */
+.sp_file_tip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #ffe1b8;
+  background: rgba(120, 58, 12, 0.95);
+  border-bottom: 1px solid rgba(255, 176, 92, 0.5);
+}
+
+.sp_file_tip a {
+  color: #2ee6d6;
+  font-weight: 600;
+  word-break: break-all;
+}
+
 /* ---------- 页脚 ---------- */
 .sp_foot {
   display: flex;

@@ -142,8 +142,9 @@
    */
   async function sp_init() {
     sp_mountTopbar('customer_service.html');
-    spApiLink.href = location.origin + '/api/ai/chat';
-    spApiLink.textContent = location.origin + '/api/ai/chat';
+    const spOrigin = location.protocol === 'file:' ? 'http://localhost:8412' : location.origin;
+    spApiLink.href = spOrigin + '/api/ai/chat';
+    spApiLink.textContent = spOrigin + '/api/ai/chat';
 
     sp_appendMessage(
       'assistant',

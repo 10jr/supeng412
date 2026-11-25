@@ -238,6 +238,28 @@
     document.body.insertBefore(spHeader, document.body.firstChild);
   }
 
+  /**
+   * 检测是否以本地文件方式（file://）打开页面，并给出正确访问提示
+   */
+  function sp_checkFileProtocol() {
+    if (location.protocol !== 'file:') return;
+
+    const spFileName = location.pathname.split('/').pop() || 'index.html';
+    const spBar = document.createElement('div');
+    spBar.className = 'sp_file_tip';
+
+    const spText = document.createElement('span');
+    spText.textContent = '当前是以本地文件方式打开的页面，接口与图片无法加载。请先双击运行 sp_start.bat，再访问：';
+
+    const spLink = document.createElement('a');
+    spLink.href = 'http://localhost:8412/' + spFileName;
+    spLink.textContent = 'http://localhost:8412/' + spFileName;
+
+    spBar.appendChild(spText);
+    spBar.appendChild(spLink);
+    document.body.appendChild(spBar);
+  }
+
   spGlobal.sp_api = sp_api;
   spGlobal.sp_sendJson = sp_sendJson;
   spGlobal.sp_getUser = sp_getUser;
@@ -251,4 +273,11 @@
   spGlobal.sp_getQuery = sp_getQuery;
   spGlobal.sp_showToast = sp_showToast;
   spGlobal.sp_mountTopbar = sp_mountTopbar;
+
+  // 页面加载后立即检查打开方式
+  if (document.body) {
+    sp_checkFileProtocol();
+  } else {
+    document.addEventListener('DOMContentLoaded', sp_checkFileProtocol);
+  }
 })(window);
