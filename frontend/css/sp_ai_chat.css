@@ -1,0 +1,267 @@
+/**
+ * 姓名：苏鹏 | 学号：24002120412
+ * 时间：2026-11-25 | 大模型：DeepSeek-V4.1-Flash
+ * 功能：AI 聊天页样式（信息条、对话气泡、输入区、快捷提问）
+ */
+
+/* ---------- 接口信息条 ---------- */
+.sp_info_bar {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  border: 1px solid var(--sp_line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(18, 28, 52, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.sp_info_item {
+  flex: 1 1 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  border-right: 1px solid var(--sp_line);
+}
+
+.sp_info_item:last-child {
+  border-right: none;
+}
+
+.sp_info_label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--sp_muted);
+}
+
+.sp_info_value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--sp_text);
+}
+
+.sp_info_code {
+  font-family: 'Consolas', 'Menlo', monospace;
+  color: var(--sp_cyan);
+  background: rgba(46, 230, 214, 0.1);
+  border: 1px solid rgba(46, 230, 214, 0.25);
+  border-radius: 8px;
+  padding: 2px 10px;
+}
+
+.sp_info_value strong {
+  font-size: 18px;
+  color: var(--sp_cyan);
+}
+
+/* ---------- 对话卡片 ---------- */
+.sp_chat_card {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+  border: 1px solid var(--sp_line);
+  border-radius: var(--sp_radius);
+  background: rgba(18, 28, 52, 0.5);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.sp_chat_toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--sp_line);
+}
+
+.sp_chat_status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--sp_muted);
+}
+
+.sp_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sp_violet);
+  box-shadow: 0 0 10px rgba(169, 123, 255, 0.8);
+}
+
+/* ---------- 消息气泡 ---------- */
+.sp_chat_body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px 20px;
+  overflow-y: auto;
+  max-height: 460px;
+}
+
+.sp_msg {
+  display: flex;
+  gap: 10px;
+  max-width: 84%;
+}
+
+.sp_msg_user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.sp_msg_avatar {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  color: #061018;
+  background: linear-gradient(135deg, var(--sp_cyan), var(--sp_blue));
+}
+
+.sp_msg_user .sp_msg_avatar {
+  color: #fff;
+  background: linear-gradient(135deg, var(--sp_blue), var(--sp_violet));
+}
+
+.sp_msg_bubble {
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--sp_text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--sp_line);
+}
+
+.sp_msg_user .sp_msg_bubble {
+  color: #061018;
+  font-weight: 500;
+  border: none;
+  background: linear-gradient(135deg, var(--sp_cyan), var(--sp_blue));
+}
+
+.sp_msg_error .sp_msg_bubble {
+  color: #ffd7de;
+  border-color: rgba(255, 94, 120, 0.45);
+  background: rgba(255, 94, 120, 0.12);
+}
+
+/* 等待回复的跳动动画 */
+.sp_typing {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  padding: 4px 2px;
+}
+
+.sp_typing i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sp_violet);
+  animation: sp_blink 1.2s infinite ease-in-out;
+}
+
+.sp_typing i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sp_typing i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes sp_blink {
+  0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* ---------- 快捷提问 ---------- */
+.sp_chat_quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 20px 14px;
+}
+
+.sp_quick_btn {
+  padding: 8px 14px;
+  border: 1px solid var(--sp_line);
+  border-radius: 999px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--sp_muted);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.sp_quick_btn:hover {
+  color: #fff;
+  border-color: rgba(169, 123, 255, 0.55);
+  background: rgba(169, 123, 255, 0.14);
+}
+
+/* ---------- 输入区 ---------- */
+.sp_chat_input {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--sp_line);
+  background: rgba(7, 11, 24, 0.4);
+}
+
+.sp_chat_textarea {
+  flex: 1;
+  min-height: 52px;
+  max-height: 150px;
+  padding: 14px 16px;
+  border: 1px solid var(--sp_line);
+  border-radius: 14px;
+  resize: none;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: inherit;
+  color: var(--sp_text);
+  background: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sp_chat_textarea:focus {
+  border-color: rgba(169, 123, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(169, 123, 255, 0.14);
+}
+
+.sp_chat_textarea::placeholder {
+  color: rgba(147, 161, 192, 0.7);
+}
+
+@media (max-width: 720px) {
+  .sp_msg {
+    max-width: 94%;
+  }
+
+  .sp_info_item {
+    border-right: none;
+    border-bottom: 1px solid var(--sp_line);
+  }
+
+  .sp_info_item:last-child {
+    border-bottom: none;
+  }
+}

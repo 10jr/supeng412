@@ -68,6 +68,13 @@ const spPages = [
     sp_path: 'customer_service.html',
     sp_desc: '基于硅基流动大模型的智能客服，支持多轮对话问答',
     sp_tag: ''
+  },
+  {
+    sp_id: 10,
+    sp_name: 'AI 聊天',
+    sp_path: 'ai_chat.html',
+    sp_desc: '基于硅基流动 DeepSeek 模型的通用 AI 聊天应用',
+    sp_tag: ''
   }
 ];
 

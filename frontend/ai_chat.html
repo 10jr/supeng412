@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+  姓名：苏鹏 | 学号：24002120412
+  时间：2026-11-25 | 大模型：DeepSeek-V4.1-Flash
+  功能：AI 聊天页，基于硅基流动 DeepSeek 模型实现通用多轮对话
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 聊天 | 校园二手集市</title>
+  <link rel="stylesheet" href="css/sp_common.css">
+  <link rel="stylesheet" href="css/sp_ai_chat.css">
+</head>
+<body class="sp_body">
+  <canvas id="sp_canvas" class="sp_canvas"></canvas>
+  <div class="sp_orb sp_orb_a"></div>
+  <div class="sp_orb sp_orb_b"></div>
+
+  <div class="sp_page">
+    <main class="sp_shell sp_main">
+      <div class="sp_page_head">
+        <div>
+          <h1 class="sp_page_title">AI 聊天</h1>
+          <p class="sp_page_desc">基于硅基流动大模型的多轮对话，可自由提问</p>
+        </div>
+        <a class="sp_btn sp_btn_ghost" href="index.html">返回首页</a>
+      </div>
+
+      <div class="sp_info_bar">
+        <div class="sp_info_item">
+          <span class="sp_info_label">接口地址</span>
+          <span class="sp_info_value">
+            <code class="sp_api_method">POST</code>
+            <a class="sp_api_link" id="sp_apiLink" href="/api/ai/chat" target="_blank" rel="noopener">/api/ai/chat</a>
+          </span>
+        </div>
+        <div class="sp_info_item">
+          <span class="sp_info_label">服务商</span>
+          <span class="sp_info_value sp_info_code" id="sp_providerText">硅基流动</span>
+        </div>
+        <div class="sp_info_item">
+          <span class="sp_info_label">模型</span>
+          <span class="sp_info_value sp_info_code" id="sp_modelText">加载中…</span>
+        </div>
+        <div class="sp_info_item">
+          <span class="sp_info_label">消息数</span>
+          <span class="sp_info_value">共 <strong id="sp_msgCount">0</strong> 条</span>
+        </div>
+      </div>
+
+      <section class="sp_chat_card">
+        <div class="sp_chat_toolbar">
+          <span class="sp_chat_status"><i class="sp_dot"></i><span id="sp_chatStatus">模型就绪，开始对话吧</span></span>
+          <button class="sp_btn sp_btn_ghost sp_btn_sm" type="button" id="sp_clearBtn">清空对话</button>
+        </div>
+
+        <div class="sp_chat_body" id="sp_chatBody" aria-live="polite"></div>
+
+        <div class="sp_chat_quick" id="sp_quickBox">
+          <button class="sp_quick_btn" type="button" data-sp-question="用三句话解释什么是大语言模型">什么是大语言模型</button>
+          <button class="sp_quick_btn" type="button" data-sp-question="帮我写一段校园二手交易的宣传文案，60 字以内">写一段宣传文案</button>
+          <button class="sp_quick_btn" type="button" data-sp-question="推荐三个适合大学生的时间管理方法">时间管理建议</button>
+        </div>
+
+        <form class="sp_chat_input" id="sp_chatForm">
+          <textarea class="sp_chat_textarea" id="sp_chatInput" rows="2" maxlength="1000"
+            placeholder="输入你的问题，Enter 发送，Shift + Enter 换行"></textarea>
+          <button class="sp_btn sp_btn_primary" type="submit" id="sp_sendBtn">发送</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="sp_shell sp_foot">
+      <span>© 2026 苏鹏 · 24002120412</span>
+      <span>AI 服务：硅基流动 · 生成内容仅供参考</span>
+    </footer>
+  </div>
+
+  <script src="js/sp_common.js"></script>
+  <script src="js/sp_background.js"></script>
+  <script src="js/sp_ai_chat.js"></script>
+</body>
+</html>

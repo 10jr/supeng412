@@ -173,7 +173,8 @@
       { sp_name: '我的商品', sp_path: 'my_goods.html' },
       { sp_name: '科技新闻', sp_path: 'news_list.html' },
       { sp_name: '图文列表', sp_path: 'gallery_list.html' },
-      { sp_name: '在线客服', sp_path: 'customer_service.html' }
+      { sp_name: '在线客服', sp_path: 'customer_service.html' },
+      { sp_name: 'AI 聊天', sp_path: 'ai_chat.html' }
     ];
     const spUser = sp_getUser();
 
