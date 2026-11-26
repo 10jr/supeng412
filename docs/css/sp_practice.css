@@ -1,0 +1,160 @@
+/**
+ * 姓名：苏鹏 | 学号：24002120412
+ * 时间：2026-11-26 | 大模型：DeepSeek-V4.1-Flash
+ * 说明：实践板块页面样式，七张运行截图按两列自适应卡片排列
+ */
+:root {
+  --sp_practice_bg: #f6f2ec;
+  --sp_practice_card: #fffdfa;
+  --sp_practice_line: rgba(120, 96, 72, 0.16);
+  --sp_practice_text: #2f2a24;
+  --sp_practice_muted: #8a7d6d;
+  --sp_practice_accent: #d2683c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--sp_practice_bg);
+  color: var(--sp_practice_text);
+  font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+.sp_practice_head {
+  padding: 56px 24px 28px;
+  text-align: center;
+}
+
+.sp_practice_badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid rgba(210, 104, 60, 0.35);
+  border-radius: 999px;
+  color: var(--sp_practice_accent);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.sp_practice_head h1 {
+  margin: 16px 0 10px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.sp_practice_sub {
+  margin: 0 auto;
+  max-width: 660px;
+  color: var(--sp_practice_muted);
+  font-size: 14px;
+}
+
+.sp_practice_meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.sp_practice_meta span {
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--sp_practice_line);
+  border-radius: 999px;
+  font-size: 12.5px;
+  color: var(--sp_practice_muted);
+}
+
+.sp_practice_meta b {
+  margin-left: 6px;
+  color: var(--sp_practice_text);
+  font-weight: 600;
+}
+
+.sp_practice_main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 24px 40px;
+}
+
+.sp_practice_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 22px;
+}
+
+.sp_shot {
+  margin: 0;
+  background: var(--sp_practice_card);
+  border: 1px solid var(--sp_practice_line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(86, 64, 44, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sp_shot:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(86, 64, 44, 0.14);
+}
+
+.sp_shot a {
+  display: block;
+  background: #efe9e1;
+}
+
+.sp_shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sp_shot figcaption {
+  padding: 12px 16px 14px;
+  font-size: 13px;
+  color: var(--sp_practice_muted);
+  border-top: 1px solid var(--sp_practice_line);
+}
+
+.sp_shot figcaption b {
+  margin-right: 8px;
+  color: var(--sp_practice_accent);
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.sp_practice_note {
+  margin: 26px 0 0;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--sp_practice_muted);
+}
+
+.sp_practice_footer {
+  padding: 10px 24px 40px;
+  text-align: center;
+}
+
+.sp_practice_footer a {
+  color: var(--sp_practice_accent);
+  text-decoration: none;
+  font-size: 13.5px;
+}
+
+.sp_practice_footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .sp_practice_head {
+    padding-top: 40px;
+  }
+
+  .sp_practice_grid {
+    grid-template-columns: 1fr;
+  }
+}
