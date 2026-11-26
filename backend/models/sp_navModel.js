@@ -66,7 +66,7 @@ const spPages = [
     sp_id: 9,
     sp_name: '在线客服',
     sp_path: 'customer_service.html',
-    sp_desc: '基于硅基流动大模型的智能客服，支持多轮对话问答',
+    sp_desc: '基于七牛云 Conatus 大模型的智能客服，支持多轮对话问答',
     sp_tag: ''
   },
   {
@@ -75,6 +75,34 @@ const spPages = [
     sp_path: 'ai_chat.html',
     sp_desc: '基于硅基流动 DeepSeek 模型的通用 AI 聊天应用',
     sp_tag: ''
+  },
+  {
+    sp_id: 11,
+    sp_name: '知识库问答',
+    sp_path: 'knowledge_base.html',
+    sp_desc: '上传 doc/docx/ppt/pptx/pdf/txt 构建专属知识库，基于知识库问答（RAG）',
+    sp_tag: '新增'
+  },
+  {
+    sp_id: 12,
+    sp_name: '图像识别',
+    sp_path: 'image_recognition.html',
+    sp_desc: '上传图片，调用硅基流动视觉模型返回图片描述',
+    sp_tag: '新增'
+  },
+  {
+    sp_id: 13,
+    sp_name: '语音识别',
+    sp_path: 'speech_recognition.html',
+    sp_desc: '上传语音，调用七牛 Qwen-Audio-3.0-ASR-Flash 模型转写文字',
+    sp_tag: '新增'
+  },
+  {
+    sp_id: 14,
+    sp_name: '实践板块',
+    sp_path: 'practice.html',
+    sp_desc: 'AI 聊天、客服、知识库、图像识别、语音识别的运行截图展示',
+    sp_tag: '新增'
   }
 ];
 
